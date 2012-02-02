@@ -276,6 +276,8 @@
 			 			 
 		function select(date, conf, e) {  
 			
+			e = e || $.Event("api");
+			
 			// current value
 			value 	 = date;
 			currYear  = date.getFullYear();
@@ -288,7 +290,6 @@
 			}
 			
 			// beforChange
-			e = e || $.Event("api");
 			e.type = "beforeChange";
 			
 			fire.trigger(e, [date]);
